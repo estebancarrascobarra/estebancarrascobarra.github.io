@@ -19,7 +19,7 @@
             padding: 20px;
         }
 
-        /* Contenedor Principal Split-Screen (Escritorio) */
+        /* Contenedor Principal Split-Screen */
         .card {
             display: flex;
             flex-direction: row;
@@ -30,18 +30,43 @@
             border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             position: relative;
+            overflow: hidden; 
         }
 
-        /* Sección de la Imagen */
-        .image-container {
+        /* Selector de Idioma (Global) */
+        .language-selector {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #9ca3af;
+            z-index: 100;
+        }
+
+        .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #374151; transition: .3s; border-radius: 18px; border: 1px solid #4b5563; }
+        .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 2px; bottom: 2px; background-color: #9ca3af; transition: .3s; border-radius: 50%; }
+        input:checked + .slider { background-color: #4b5563; border-color: #6b7280; }
+        input:checked + .slider:before { transform: translateX(16px); background-color: #f3f4f6; }
+
+        /* --- NUEVO ENFOQUE: ETIQUETA IMG REAL --- */
+        .profile-sidebar {
             flex: 1;
-            background-image: url('WhatsApp Image 2026-06-06 at 10.50.25.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100%;
-            border-top-left-radius: 16px;
-            border-bottom-left-radius: 16px;
+            display: flex;
+            background: #111214;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%; /* Alinea para centrar tu rostro */
+            display: block;
         }
 
         /* Sección de Contenido */
@@ -54,107 +79,24 @@
             position: relative;
         }
 
-        /* Selector de Idioma */
-        .language-selector {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #9ca3af;
-            z-index: 10;
-        }
-
-        .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #374151; transition: .3s; border-radius: 18px; border: 1px solid #4b5563; }
-        .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 2px; bottom: 2px; background-color: #9ca3af; transition: .3s; border-radius: 50%; }
-        input:checked + .slider { background-color: #4b5563; border-color: #6b7280; }
-        input:checked + .slider:before { transform: translateX(16px); background-color: #f3f4f6; }
-
         /* Textos y Encabezados */
-        h1 { 
-            font-size: 1.8rem; 
-            color: #f3f4f6; 
-            margin-bottom: 12px; 
-            line-height: 1.2;
-        }
+        h1 { font-size: 1.8rem; color: #f3f4f6; margin-bottom: 12px; line-height: 1.2; }
+        .tagline { font-size: 1rem; color: #9ca3af; margin-bottom: 20px; line-height: 1.5; }
+        .bio { font-size: 0.9rem; line-height: 1.6; color: #9ca3af; margin-bottom: 25px; }
         
-        .tagline { 
-            font-size: 1rem; 
-            color: #9ca3af; 
-            margin-bottom: 20px; 
-            line-height: 1.5;
-        }
-
-        .bio {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #9ca3af;
-            margin-bottom: 25px;
-        }
-        
-        .academic-summary { 
-            font-size: 0.85rem; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 8px; 
-            margin-bottom: 20px; 
-        }
-        .academic-summary span { 
-            background: #23262a; 
-            padding: 8px 14px; 
-            border-radius: 8px; 
-            border: 1px solid #373b42; 
-            display: inline-block;
-            width: fit-content;
-        }
+        .academic-summary { font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+        .academic-summary span { background: #23262a; padding: 8px 14px; border-radius: 8px; border: 1px solid #373b42; display: inline-block; width: fit-content; }
 
         /* Focos de Investigación */
-        .research-tags { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 8px; 
-            margin-bottom: 30px; 
-        }
-        .tag { 
-            font-size: 0.75rem; 
-            font-weight: 600; 
-            color: #e5e7eb; 
-            background: rgba(156, 163, 175, 0.15); 
-            padding: 6px 12px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(156, 163, 175, 0.3); 
-            white-space: nowrap;
-        }
+        .research-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+        .tag { font-size: 0.75rem; font-weight: 600; color: #e5e7eb; background: rgba(156, 163, 175, 0.15); padding: 6px 12px; border-radius: 20px; border: 1px solid rgba(156, 163, 175, 0.3); white-space: nowrap; }
 
         /* Botones */
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            color: #ffffff;
-            border: 1px solid transparent;
-            cursor: pointer;
-            user-select: none;
-        }
-
+        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.2s ease; color: #ffffff; border: 1px solid transparent; cursor: pointer; user-select: none; }
         .icon { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; }
         .icon svg { width: 100%; height: 100%; }
-
         .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
 
         .btn-email { background-color: #2ea043; }
@@ -164,38 +106,34 @@
         .btn-cv { background-color: transparent; color: #d1d5db; border: 1px solid #4b5563; margin-top: 5px; }
         .btn-cv:hover { background-color: #374151; color: #ffffff; }
 
-        /* --- VERSIÓN MÓVIL OPTIMIZADA (Avatar Circular) --- */
+        /* --- VERSIÓN MÓVIL (Foto Circular Robusta) --- */
         @media (max-width: 768px) {
             body { padding: 15px; }
-            .card {
-                flex-direction: column;
-                border-radius: 12px;
-            }
+            .card { flex-direction: column; border-radius: 12px; overflow: visible; }
+            
             .language-selector { 
-                top: 15px; 
-                right: 15px; 
-                background: #1a1c1e;
-                padding: 6px 10px; 
-                border-radius: 20px;
-                border: 1px solid #2d3036;
+                top: 15px; right: 15px; background: #1a1c1e; padding: 6px 10px; border-radius: 20px; border: 1px solid #2d3036; 
             }
-            .image-container {
-                /* Transformación a círculo */
-                width: 140px;
-                height: 140px;
-                min-height: auto;
+            
+            /* Contenedor centrado para la foto en móvil */
+            .profile-sidebar {
+                width: 100%;
+                justify-content: center;
+                background: transparent;
+                padding-top: 35px;
+                margin-bottom: -15px;
+            }
+            
+            /* Avatar tipo LinkedIn */
+            .profile-pic {
+                width: 150px;
+                height: 150px;
                 border-radius: 50%;
-                margin: 40px auto 0;
-                /* Borde sutil para separarlo del fondo */
                 border: 3px solid #2d3036;
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-                /* Ajuste de posición: el "20%" alinea tu rostro hacia el centro vertical */
-                background-position: center 20%;
             }
-            .content-container {
-                padding: 25px 20px 35px 20px;
-                align-items: center;
-            }
+
+            .content-container { padding: 25px 20px 35px 20px; align-items: center; }
             h1 { font-size: 1.6rem; text-align: center; }
             .tagline { text-align: center; margin-bottom: 15px; }
             .bio { text-align: justify; font-size: 0.85rem; margin-bottom: 20px; }
@@ -215,8 +153,10 @@
             </label>
         </div>
 
-        <!-- Foto de Perfil (Pantalla dividida en PC, Círculo en Móvil) -->
-        <div class="image-container"></div>
+        <!-- Uso explícito de la etiqueta <img> para garantizar renderizado -->
+        <div class="profile-sidebar">
+            <img src="profile.jpg" alt="Esteban Carrasco" class="profile-pic" onerror="this.style.display='none';">
+        </div>
 
         <div class="content-container">
             <header class="header">
@@ -271,7 +211,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
         const toggle = document.getElementById('lang-toggle');
         const langLabel = document.getElementById('lang-label');
@@ -284,10 +223,7 @@
             langLabel.textContent = isEnglish ? 'ES' : 'EN';
         }
 
-        toggle.addEventListener('change', (e) => {
-            updateLanguage(e.target.checked);
-        });
-
+        toggle.addEventListener('change', (e) => { updateLanguage(e.target.checked); });
         updateLanguage(false);
 
         function copyEmail() {
@@ -301,7 +237,6 @@
         }
     </script>
 
-    <!-- Script Analítica GoatCounter -->
     <script data-goatcounter="https://estebancarrascobarra.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
