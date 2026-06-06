@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esteban Ignacio Carrasco Barra | Física Teórica</title>
     <style>
-        /* --- ESTILOS INTEGADOS --- */
+        /* --- ESTILOS INTEGRADOS --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             background: #1a1c1e; /* Gris carbón basado en el abrigo */
             border: 1px solid #2d3036;
             border-radius: 16px;
@@ -36,7 +36,6 @@
         /* Sección de la Imagen (Mitad Izquierda) */
         .image-container {
             flex: 1;
-            /* Se mantiene el ratio utilizando cover dentro del contenedor flexible */
             background-image: url('WhatsApp Image 2026-06-06 at 10.50.25.jpeg');
             background-size: cover;
             background-position: center;
@@ -46,7 +45,7 @@
 
         /* Sección de Contenido (Mitad Derecha) */
         .content-container {
-            flex: 1;
+            flex: 1.2;
             padding: 50px 40px;
             display: flex;
             flex-direction: column;
@@ -65,6 +64,7 @@
             font-size: 0.8rem;
             font-weight: bold;
             color: #9ca3af;
+            z-index: 10;
         }
 
         .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
@@ -76,17 +76,25 @@
 
         /* Textos y Encabezados */
         h1 { 
-            font-size: 2rem; 
+            font-size: 1.8rem; 
             color: #f3f4f6; 
             margin-bottom: 12px; 
-            line-height: 1.1;
+            line-height: 1.2;
         }
         
         .tagline { 
-            font-size: 1.05rem; 
+            font-size: 1rem; 
             color: #9ca3af; 
-            margin-bottom: 25px; 
+            margin-bottom: 20px; 
+            line-height: 1.5;
+        }
+
+        /* Descripción Personal Optimizada */
+        .bio {
+            font-size: 0.9rem;
             line-height: 1.6;
+            color: #9ca3af;
+            margin-bottom: 25px;
         }
         
         .academic-summary { 
@@ -94,7 +102,7 @@
             display: flex; 
             flex-direction: column; 
             gap: 8px; 
-            margin-bottom: 25px; 
+            margin-bottom: 20px; 
         }
         .academic-summary span { 
             background: #23262a; 
@@ -103,25 +111,26 @@
             border: 1px solid #373b42; 
         }
 
-        /* Focos de Investigación (Adaptados a la nueva solicitud) */
+        /* Focos de Investigación (Corregido espaciado y saltos de línea) */
         .research-tags { 
             display: flex; 
             flex-wrap: wrap; 
             gap: 8px; 
-            margin-bottom: 35px; 
+            margin-bottom: 30px; 
         }
         .tag { 
             font-size: 0.75rem; 
             font-weight: 600; 
             color: #e5e7eb; 
             background: rgba(156, 163, 175, 0.15); 
-            padding: 6px 14px; 
+            padding: 6px 12px; 
             border-radius: 20px; 
             border: 1px solid rgba(156, 163, 175, 0.3); 
+            white-space: nowrap;
         }
 
         /* Botones: Alineación Estricta */
-        .links-container { display: flex; flex-direction: column; gap: 14px; }
+        .links-container { display: flex; flex-direction: column; gap: 12px; }
         
         .btn {
             display: flex;
@@ -129,7 +138,7 @@
             justify-content: center;
             gap: 12px;
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
@@ -146,7 +155,7 @@
 
         .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
 
-        /* Colores Botones Mantenidos para Reconocimiento de Marca */
+        /* Colores Botones */
         .btn-email { background-color: #2ea043; }
         .btn-linkedin { background-color: #0a66c2; }
         .btn-whatsapp { background-color: #25d366; }
@@ -154,50 +163,64 @@
         .btn-cv { background-color: transparent; color: #d1d5db; border: 1px solid #4b5563; margin-top: 5px; }
         .btn-cv:hover { background-color: #374151; color: #ffffff; }
 
-        /* --- VERSIÓN MÓVIL RESPONSIVA --- */
+        /* --- VERSIÓN MÓVIL OPTIMIZADA --- */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
             .card {
                 flex-direction: column;
                 max-width: 100%;
+                border-radius: 12px;
             }
             .image-container {
                 width: 100%;
-                height: 45vh; /* Ajusta la imagen a la mitad superior de la pantalla */
-                background-position: top center;
+                height: 40vh; /* Proporción balanceada en móvil */
+                background-position: center 20%;
             }
             .content-container {
                 padding: 30px 20px;
             }
-            h1 { font-size: 1.7rem; text-align: center; }
-            .tagline { text-align: center; }
-            .language-selector { top: 15px; right: 15px; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px;}
+            h1 { font-size: 1.6rem; text-align: center; }
+            .tagline { text-align: center; margin-bottom: 15px; }
+            .bio { text-align: justify; font-size: 0.85rem; margin-bottom: 20px; }
+            .research-tags { justify-content: center; }
+            .language-selector { 
+                top: 15px; 
+                right: 15px; 
+                background: rgba(26, 28, 30, 0.8); 
+                padding: 6px 10px; 
+                border-radius: 20px;
+                border: 1px solid #2d3036;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <!-- Mitad Izquierda: Foto de Perfil -->
-        <div class="image-container">
-            <!-- Selector de idioma posicionado sobre la foto en móviles, y en la esquina del contenedor derecho en desktop -->
-            <div class="language-selector" style="z-index: 10;">
-                <span id="lang-label">EN</span>
-                <label class="switch">
-                    <input type="checkbox" id="lang-toggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
+        <div class="language-selector">
+            <span id="lang-label">EN</span>
+            <label class="switch">
+                <input type="checkbox" id="lang-toggle">
+                <span class="slider"></span>
+            </label>
         </div>
 
-        <!-- Mitad Derecha: Contenido y Enlaces -->
+        <div class="image-container"></div>
+
         <div class="content-container">
             <header class="header">
                 <h1>Esteban Ignacio Carrasco Barra</h1>
                 
-                <!-- Tagline en líneas separadas -->
                 <p class="tagline">
                     <span data-es="Ingeniero Civil Matemático" data-en="Civil Mathematical Engineer"></span><br>
                     <span data-es="Estudiante de Magíster en Física" data-en="MSc in Physics Student"></span>
+                </p>
+
+                <p class="bio" 
+                   data-es="Me apasiona resolver problemas complejos sin importar el área, pero encuentro mi mayor motivación en la Gravitación y la Cosmología. Me interesan particularmente los desafíos teóricos que exigen un alto nivel de abstracción matemática y rigurosidad geométrica."
+                   data-en="I am passionate about solving complex problems regardless of the field, but I find my core motivation in Gravitation and Cosmology. I am particularly interested in theoretical challenges that demand a high level of mathematical abstraction and geometric rigor.">
                 </p>
                 
                 <div class="academic-summary">
@@ -205,17 +228,15 @@
                     <span data-es="Universidad de Chile FCFM" data-en="Universidad de Chile FCFM"></span>
                 </div>
 
-                <!-- Focos de Investigación Solicitados -->
                 <div class="research-tags">
                     <span class="tag" data-es="Relatividad General" data-en="General Relativity"></span>
-                    <span class="tag" data-es="Cosmología" data-en="Cosmology"></span>
+                    <span class="tag" data-es="Cosmología Teórica" data-en="Theoretical Cosmology"></span>
                     <span class="tag" data-es="Física de Altas Energías" data-en="High-Energy Physics"></span>
-                    <span class="tag" data-es="Física de Partículas" data-en="Particle Physics"></span>
+                    <span class="tag" data-es="Ecuaciones Diferenciales Parciales" data-en="Partial Differential Equations"></span>
                 </div>
             </header>
 
             <main class="links-container">
-                <!-- Botón de Correo -->
                 <div class="btn btn-email" onclick="copyEmail()">
                     <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg></span>
                     <span id="email-text">esteban.carrasco@ug.uchile.cl</span>
@@ -241,7 +262,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
         // Lógica de Idioma
         const toggle = document.getElementById('lang-toggle');
@@ -277,7 +297,6 @@
         }
     </script>
 
-    <!-- Script de GoatCounter (Analítica) -->
     <script data-goatcounter="https://estebancarrascobarra.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
