@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban Carrasco | Civil Mathematical Engineer</title>
+    <title>Esteban Ignacio Carrasco Barra | Física Teórica</title>
     <style>
-        /* --- ESTILOS INTEGADOS (Cero dependencias externas) --- */
+        /* --- ESTILOS INTEGADOS --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #0d1117;
-            color: #c9d1d9;
+            background: #111214; /* Tono oscuro basado en el fondo de la foto */
+            color: #d1d5db;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,49 +19,106 @@
             padding: 20px;
         }
 
-        /* Contenedor Principal Ajustado */
+        /* Contenedor Principal Split-Screen */
         .card {
+            display: flex;
+            flex-direction: row;
             width: 100%;
-            max-width: 420px;
-            background: #161b22;
-            border: 1px solid #30363d;
+            max-width: 900px;
+            background: #1a1c1e; /* Gris carbón basado en el abrigo */
+            border: 1px solid #2d3036;
             border-radius: 16px;
-            padding: 40px 30px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
-            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
             position: relative;
         }
 
-        /* Selector de Idioma Integrado en la Tarjeta */
+        /* Sección de la Imagen (Mitad Izquierda) */
+        .image-container {
+            flex: 1;
+            /* Se mantiene el ratio utilizando cover dentro del contenedor flexible */
+            background-image: url('WhatsApp Image 2026-06-06 at 10.50.25.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100%;
+        }
+
+        /* Sección de Contenido (Mitad Derecha) */
+        .content-container {
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Selector de Idioma Minimalista */
         .language-selector {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 30px;
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 0.8rem;
             font-weight: bold;
-            color: #8b949e;
+            color: #9ca3af;
         }
 
         .switch { position: relative; display: inline-block; width: 34px; height: 18px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #21262d; transition: .3s; border-radius: 18px; border: 1px solid #30363d; }
-        .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 2px; bottom: 2px; background-color: #8b949e; transition: .3s; border-radius: 50%; }
-        input:checked + .slider { background-color: #1f6feb; border-color: #1f6feb; }
-        input:checked + .slider:before { transform: translateX(16px); background-color: #ffffff; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #374151; transition: .3s; border-radius: 18px; border: 1px solid #4b5563; }
+        .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 2px; bottom: 2px; background-color: #9ca3af; transition: .3s; border-radius: 50%; }
+        input:checked + .slider { background-color: #4b5563; border-color: #6b7280; }
+        input:checked + .slider:before { transform: translateX(16px); background-color: #f3f4f6; }
 
-        /* Textos */
-        h1 { font-size: 1.8rem; color: #f0f6fc; margin-bottom: 5px; }
-        .tagline { font-size: 0.95rem; color: #8b949e; margin-bottom: 20px; }
+        /* Textos y Encabezados */
+        h1 { 
+            font-size: 2rem; 
+            color: #f3f4f6; 
+            margin-bottom: 12px; 
+            line-height: 1.1;
+        }
         
-        .academic-summary { font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-        .academic-summary span { background: #21262d; padding: 6px 12px; border-radius: 6px; border: 1px solid #30363d; }
+        .tagline { 
+            font-size: 1.05rem; 
+            color: #9ca3af; 
+            margin-bottom: 25px; 
+            line-height: 1.6;
+        }
+        
+        .academic-summary { 
+            font-size: 0.85rem; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            margin-bottom: 25px; 
+        }
+        .academic-summary span { 
+            background: #23262a; 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            border: 1px solid #373b42; 
+        }
 
-        /* Focos de Investigación */
-        .research-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 30px; }
-        .tag { font-size: 0.75rem; font-weight: 600; color: #58a6ff; background: rgba(88,166,255,0.1); padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(88,166,255,0.2); }
+        /* Focos de Investigación (Adaptados a la nueva solicitud) */
+        .research-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px; 
+            margin-bottom: 35px; 
+        }
+        .tag { 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            color: #e5e7eb; 
+            background: rgba(156, 163, 175, 0.15); 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(156, 163, 175, 0.3); 
+        }
 
         /* Botones: Alineación Estricta */
         .links-container { display: flex; flex-direction: column; gap: 14px; }
@@ -73,7 +130,7 @@
             gap: 12px;
             width: 100%;
             padding: 14px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
@@ -84,77 +141,104 @@
             user-select: none;
         }
 
-        .icon { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; }
+        .icon { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; }
         .icon svg { width: 100%; height: 100%; }
 
         .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
 
-        /* Colores Botones */
+        /* Colores Botones Mantenidos para Reconocimiento de Marca */
         .btn-email { background-color: #2ea043; }
         .btn-linkedin { background-color: #0a66c2; }
         .btn-whatsapp { background-color: #25d366; }
         .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .btn-cv { background-color: transparent; color: #c9d1d9; border: 1px solid #8b949e; margin-top: 10px; }
-        .btn-cv:hover { background-color: #30363d; color: #ffffff; }
+        .btn-cv { background-color: transparent; color: #d1d5db; border: 1px solid #4b5563; margin-top: 5px; }
+        .btn-cv:hover { background-color: #374151; color: #ffffff; }
 
+        /* --- VERSIÓN MÓVIL RESPONSIVA --- */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            .image-container {
+                width: 100%;
+                height: 45vh; /* Ajusta la imagen a la mitad superior de la pantalla */
+                background-position: top center;
+            }
+            .content-container {
+                padding: 30px 20px;
+            }
+            h1 { font-size: 1.7rem; text-align: center; }
+            .tagline { text-align: center; }
+            .language-selector { top: 15px; right: 15px; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px;}
+        }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <!-- Selector Integrado -->
-        <div class="language-selector">
-            <span id="lang-label">EN</span>
-            <label class="switch">
-                <input type="checkbox" id="lang-toggle">
-                <span class="slider"></span>
-            </label>
+        <!-- Mitad Izquierda: Foto de Perfil -->
+        <div class="image-container">
+            <!-- Selector de idioma posicionado sobre la foto en móviles, y en la esquina del contenedor derecho en desktop -->
+            <div class="language-selector" style="z-index: 10;">
+                <span id="lang-label">EN</span>
+                <label class="switch">
+                    <input type="checkbox" id="lang-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
 
-        <header class="header">
-            <h1>Esteban Carrasco</h1>
-            <p class="tagline" 
-               data-es="Ingeniero Civil Matemático | Estudiante de Magíster en Física" 
-               data-en="Civil Mathematical Engineer | MSc in Physics Student">
-            </p>
-            
-            <div class="academic-summary">
-                <span data-es="Beca Magíster Nacional ANID 2026" data-en="ANID National Master's Scholar 2026"></span>
-                <span data-es="Universidad de Chile FCFM" data-en="Universidad de Chile FCFM"></span>
-            </div>
+        <!-- Mitad Derecha: Contenido y Enlaces -->
+        <div class="content-container">
+            <header class="header">
+                <h1>Esteban Ignacio Carrasco Barra</h1>
+                
+                <!-- Tagline en líneas separadas -->
+                <p class="tagline">
+                    <span data-es="Ingeniero Civil Matemático" data-en="Civil Mathematical Engineer"></span><br>
+                    <span data-es="Estudiante de Magíster en Física" data-en="MSc in Physics Student"></span>
+                </p>
+                
+                <div class="academic-summary">
+                    <span data-es="Beca Magíster Nacional ANID 2026" data-en="ANID National Master's Scholar 2026"></span>
+                    <span data-es="Universidad de Chile FCFM" data-en="Universidad de Chile FCFM"></span>
+                </div>
 
-            <!-- Focos de Investigación -->
-            <div class="research-tags">
-                <span class="tag" data-es="Física Teórica" data-en="Theoretical Physics"></span>
-                <span class="tag" data-es="EDP & Análisis Num." data-en="PDE & Num. Analysis"></span>
-                <span class="tag" data-es="Relatividad y Cosmología" data-en="Relativity & Cosmology"></span>
-            </div>
-        </header>
+                <!-- Focos de Investigación Solicitados -->
+                <div class="research-tags">
+                    <span class="tag" data-es="Relatividad General" data-en="General Relativity"></span>
+                    <span class="tag" data-es="Cosmología" data-en="Cosmology"></span>
+                    <span class="tag" data-es="Física de Altas Energías" data-en="High-Energy Physics"></span>
+                    <span class="tag" data-es="Física de Partículas" data-en="Particle Physics"></span>
+                </div>
+            </header>
 
-        <main class="links-container">
-            <!-- Botón de Correo con función de copiado -->
-            <div class="btn btn-email" onclick="copyEmail()">
-                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg></span>
-                <span id="email-text">esteban.carrasco@ug.uchile.cl</span>
-            </div>
+            <main class="links-container">
+                <!-- Botón de Correo -->
+                <div class="btn btn-email" onclick="copyEmail()">
+                    <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg></span>
+                    <span id="email-text">esteban.carrasco@ug.uchile.cl</span>
+                </div>
 
-            <a href="https://www.linkedin.com/in/esteban-cb/" class="btn btn-linkedin" target="_blank" rel="noopener noreferrer">
-                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg></span>
-                LinkedIn
-            </a>
+                <a href="https://www.linkedin.com/in/esteban-cb/" class="btn btn-linkedin" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg></span>
+                    LinkedIn
+                </a>
 
-            <a href="https://wa.me/56952595714" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.4-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.31a8.182 8.182 0 0 1-1.25-4.38c.01-4.54 3.7-8.23 8.24-8.23m-3.53 4.8c-.13 0-.28.05-.43.21c-.15.16-.58.57-.58 1.39c0 .82.6 1.62.68 1.73c.09.11 1.18 1.81 2.86 2.53c.4.17.71.27.95.35c.4.13.77.11 1.06.07c.32-.05 1-.41 1.14-.81c.14-.39.14-.73.1-.81c-.04-.08-.14-.13-.3-.21c-.16-.08-.94-.47-1.08-.52c-.14-.05-.25-.08-.35.08c-.1.16-.39.49-.48.6c-.09.11-.18.12-.34.04c-.16-.08-.68-.25-1.31-.81c-.49-.43-.81-.97-.91-1.14c-.1-.17-.01-.26.07-.34c.08-.08.16-.18.24-.28c.08-.1.11-.16.16-.27c.05-.11.02-.2-.01-.29c-.03-.09-.35-.85-.48-1.16c-.13-.32-.27-.28-.35-.28c-.08 0-.18-.01-.29-.01Z"/></svg></span>
-                WhatsApp
-            </a>
+                <a href="https://wa.me/56952595714" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.4-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.31a8.182 8.182 0 0 1-1.25-4.38c.01-4.54 3.7-8.23 8.24-8.23m-3.53 4.8c-.13 0-.28.05-.43.21c-.15.16-.58.57-.58 1.39c0 .82.6 1.62.68 1.73c.09.11 1.18 1.81 2.86 2.53c.4.17.71.27.95.35c.4.13.77.11 1.06.07c.32-.05 1-.41 1.14-.81c.14-.39.14-.73.1-.81c-.04-.08-.14-.13-.3-.21c-.16-.08-.94-.47-1.08-.52c-.14-.05-.25-.08-.35.08c-.1.16-.39.49-.48.6c-.09.11-.18.12-.34.04c-.16-.08-.68-.25-1.31-.81c-.49-.43-.81-.97-.91-1.14c-.1-.17-.01-.26.07-.34c.08-.08.16-.18.24-.28c.08-.1.11-.16.16-.27c.05-.11.02-.2-.01-.29c-.03-.09-.35-.85-.48-1.16c-.13-.32-.27-.28-.35-.28c-.08 0-.18-.01-.29-.01Z"/></svg></span>
+                    WhatsApp
+                </a>
 
-            <a href="https://www.instagram.com/estebancarrasco.exe/" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
-                <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6Z"/></svg></span>
-                Instagram
-            </a>
+                <a href="https://www.instagram.com/estebancarrasco.exe/" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6Z"/></svg></span>
+                    Instagram
+                </a>
 
-            <a href="cv.pdf" class="btn btn-cv" target="_blank" data-es="Descargar CV Completo" data-en="Download Full CV"></a>
-        </main>
+                <a href="cv.pdf" class="btn btn-cv" target="_blank" data-es="Descargar CV Completo" data-en="Download Full CV"></a>
+            </main>
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -175,6 +259,7 @@
             updateLanguage(e.target.checked);
         });
 
+        // Inicializar en español
         updateLanguage(false);
 
         // Lógica de Copiado de Correo
@@ -185,7 +270,6 @@
                 const isEnglish = toggle.checked;
                 emailText.textContent = isEnglish ? "Copied to clipboard!" : "¡Copiado al portapapeles!";
                 
-                // Restaura el texto original después de 2 segundos
                 setTimeout(() => {
                     emailText.textContent = email;
                 }, 2000);
