@@ -1,101 +1,55 @@
-/* Reseteo básico y variables de color */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* --- Nuevos Estilos Académicos --- */
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0d1117; /* Fondo oscuro tipo GitHub */
-    color: #c9d1d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Contenedor principal */
-.card {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    padding: 30px 20px;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-}
-
-/* Encabezado */
-.header h1 {
-    font-size: 1.8rem;
-    color: #f0f6fc;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.tagline {
-    font-size: 0.95rem;
-    color: #8b949e;
-    margin-bottom: 30px;
-}
-
-/* Contenedor de enlaces */
-.links-container {
+/* Resumen Académico */
+.academic-summary {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Separación simétrica entre botones */
-}
-
-/* Estilo base de los botones */
-.btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: transform 0.1s ease, filter 0.2s ease;
-    cursor: pointer;
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-
-.btn:hover {
-    filter: brightness(1.15);
-}
-
-/* Colores específicos por plataforma */
-.btn-linkedin {
-    background-color: #0077b5;
-    color: #ffffff;
-}
-
-.btn-whatsapp {
-    background-color: #25d366;
-    color: #ffffff;
-}
-
-/* Degradado corporativo de Instagram */
-.btn-instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #ffffff;
-}
-
-/* Botón de CV con contraste gris neutro alto */
-.btn-cv {
-    background-color: #21262d;
+    gap: 6px;
+    font-size: 0.85rem;
     color: #c9d1d9;
-    border: 1px solid #30363d;
-    margin-top: 8px; /* Margen extra para separar el bloque de redes del CV */
+    margin-bottom: 20px;
 }
 
-.btn-cv:hover {
-    background-color: #30363d;
-    border-color: #8b949e;
+.academic-summary span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(48, 54, 61, 0.5);
+}
+
+/* Focos de Investigación (Tags) */
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+/* Botón Correo Institucional */
+.btn-email {
+    background-color: #2ea043;
+    color: #ffffff;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.btn-email:hover {
+    background-color: #3fb950;
+}
+.btn-instagram {
+    background: linear-gradient(225deg, #405DE6 0%, #5851DB 25%, #833AB4 50%, #C13584 75%, #E1306C 100%);
+    color: #ffffff;
+    border: 1px solid rgba(240, 246, 252, 0.1);
 }
