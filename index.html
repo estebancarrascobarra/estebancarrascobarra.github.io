@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esteban Ignacio Carrasco Barra | Física Teórica</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <style>
@@ -180,27 +179,13 @@
             <header class="header">
                 <h1>Esteban Ignacio Carrasco Barra</h1>
                 
-                <p class="tagline">
-                    <span data-es="Ingeniero Civil Matemático" data-en="Civil Mathematical Engineer"></span><br>
-                    <span data-es="Estudiante de Magíster en Física" data-en="MSc in Physics Student"></span>
-                </p>
+                <p class="tagline" id="container-tagline"></p>
 
-                <p class="bio" 
-                   data-es="Me apasiona resolver problemas complejos sin importar el área, pero encuentro mi mayor motivación en la Gravitación y la Cosmología. Me interesan particularmente los desafíos teóricos que exigen un alto nivel de abstracción matemática y rigurosidad geométrica."
-                   data-en="I am passionate about solving complex problems regardless of the field, but I find my core motivation in Gravitation and Cosmology. I am particularly interested in theoretical challenges that demand a high level of mathematical abstraction and geometric rigor.">
-                </p>
+                <p class="bio" id="container-bio"></p>
                 
-                <div class="academic-summary">
-                    <span data-es="Beca Magíster Nacional ANID 2026" data-en="ANID National Master's Scholar 2026"></span>
-                    <span data-es="Universidad de Chile FCFM" data-en="Universidad de Chile FCFM"></span>
-                </div>
+                <div class="academic-summary" id="container-academic"></div>
 
-                <div class="research-tags">
-                    <span class="tag" data-es="Relatividad General" data-en="General Relativity"></span>
-                    <span class="tag" data-es="Cosmología Teórica" data-en="Theoretical Cosmology"></span>
-                    <span class="tag" data-es="Física de Altas Energías" data-en="High-Energy Physics"></span>
-                    <span class="tag" data-es="Ecuaciones Diferenciales Parciales" data-en="Partial Differential Equations"></span>
-                </div>
+                <div class="research-tags" id="container-tags"></div>
             </header>
 
             <main class="links-container">
@@ -224,7 +209,7 @@
                     Instagram
                 </a>
 
-                <a href="cv.pdf" class="btn btn-cv" target="_blank" data-es="Descargar CV Completo" data-en="Download Full CV"></a>
+                <a href="cv.pdf" class="btn btn-cv" target="_blank" id="btn-cv"></a>
             </main>
         </div>
     </div>
@@ -232,17 +217,69 @@
     <script>
         const toggle = document.getElementById('lang-toggle');
         const langLabel = document.getElementById('lang-label');
-        const translatableElements = document.querySelectorAll('[data-es]');
+        let siteData = null;
 
         function updateLanguage(isEnglish) {
-            translatableElements.forEach(el => {
-                el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-es');
+            if (!siteData) return;
+            
+            const lang = isEnglish ? 'en' : 'es';
+            
+            // 1. Render de las Taglines
+            const taglineCont = document.getElementById('container-tagline');
+            taglineCont.innerHTML = '';
+            siteData.taglines.forEach((tl, index) => {
+                const span = document.createElement('span');
+                span.textContent = tl[lang];
+                taglineCont.appendChild(span);
+                if (index < siteData.taglines.length - 1) {
+                    taglineCont.appendChild(document.createElement('br'));
+                }
             });
+
+            // 2. Render de Bio
+            document.getElementById('container-bio').textContent = siteData.bio[lang];
+
+            // 3. Render de Academic Summary
+            const academicCont = document.getElementById('container-academic');
+            academicCont.innerHTML = '';
+            siteData.academic.forEach(item => {
+                const span = document.createElement('span');
+                span.textContent = item[lang];
+                academicCont.appendChild(span);
+            });
+
+            // 4. Render de Research Tags
+            const tagsCont = document.getElementById('container-tags');
+            tagsCont.innerHTML = '';
+            siteData.tags.forEach(item => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.textContent = item[lang];
+                tagsCont.appendChild(span);
+            });
+
+            // 5. Botón de CV
+            document.getElementById('btn-cv').textContent = siteData.cv[lang];
+
+            // Selector label text
             langLabel.textContent = isEnglish ? 'ES' : 'EN';
         }
 
+        // Carga asíncrona del JSON al inicializar el documento
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('datos.json')
+                .then(response => {
+                    if (!response.ok) throw new Error("No se pudo obtener el archivo de configuración.");
+                    return response.json();
+                })
+                .then(data => {
+                    siteData = data;
+                    updateLanguage(false); // Renderizado inicial en español
+                })
+                .catch(err => console.error("Error cargando el panel dinámico:", err));
+        });
+
         toggle.addEventListener('change', (e) => { updateLanguage(e.target.checked); });
-        updateLanguage(false);
 
         function copyEmail() {
             const email = "esteban.carrasco@ug.uchile.cl";

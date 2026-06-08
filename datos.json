@@ -1,0 +1,24 @@
+{
+  "taglines": [
+    { "es": "Ingeniero Civil Matemático", "en": "Civil Mathematical Engineer" },
+    { "es": "Estudiante de Magíster en Física", "en": "MSc in Physics Student" }
+  ],
+  "bio": {
+    "es": "Me apasiona resolver problemas complejos sin importar el área, pero encuentro mi mayor motivación en la Gravitación y la Cosmología. Me interesan particularmente los desafíos teóricos que exigen un alto nivel de abstracción matemática y rigurosidad geométrica.",
+    "en": "I am passionate about solving complex problems regardless of the field, but I find my core motivation in Gravitation and Cosmology. I am particularly interested in theoretical challenges that demand a high level of mathematical abstraction and geometric rigor."
+  },
+  "academic": [
+    { "es": "Beca Magíster Nacional ANID 2026", "en": "ANID National Master's Scholar 2026" },
+    { "es": "Universidad de Chile FCFM", "en": "Universidad de Chile FCFM" }
+  ],
+  "tags": [
+    { "es": "Relatividad General", "en": "General Relativity" },
+    { "es": "Cosmología Teórica", "en": "Theoretical Cosmology" },
+    { "es": "Física de Altas Energías", "en": "High-Energy Physics" },
+    { "es": "Ecuaciones Diferenciales Parciales", "en": "Partial Differential Equations" }
+  ],
+  "cv": {
+    "es": "Descargar CV Completo",
+    "en": "Download Full CV"
+  }
+}
