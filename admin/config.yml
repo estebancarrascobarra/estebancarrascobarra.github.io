@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Cambiar a 'master' si tu rama principal se llama así
+  branch: main # Cambiar a master si tu rama principal se llama así
 
 media_folder: "images"
 public_folder: "/images"
@@ -12,41 +12,52 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Textos Portafolio"
+      - label: "Editar Todo el Portafolio"
         name: "portafolio"
         file: "datos.json"
         fields:
+          # --- SECCIÓN: TAGLINES ---
           - label: "Líneas de Presentación (Taglines)"
             name: "taglines"
             widget: "list"
+            summary: "{{fields.es}} / {{fields.en}}"
+            minimize_collapsed: true
             fields:
-              - {label: "Texto (ES)", name: "es", widget: "string"}
-              - {label: "Texto (EN)", name: "en", widget: "string"}
+              - {label: "Texto en Español", name: "es", widget: "string", hint: "Ej: Ingeniero Civil Matemático"}
+              - {label: "Texto en Inglés", name: "en", widget: "string", hint: "Ej: Civil Mathematical Engineer"}
           
-          - label: "Biografía"
+          # --- SECCIÓN: BIOGRAFÍA ---
+          - label: "Biografía Principal"
             name: "bio"
             widget: "object"
             fields:
-              - {label: "Biografía (ES)", name: "es", widget: "text"}
-              - {label: "Biografía (EN)", name: "en", widget: "text"}
+              - {label: "Biografía (ES)", name: "es", widget: "text", hint: "Texto en español sobre tus motivaciones e intereses."}
+              - {label: "Biografía (EN)", name: "en", widget: "text", hint: "Texto en inglés correspondiente."}
 
-          - label: "Resumen Académico"
+          # --- SECCIÓN: RESUMEN ACADÉMICO ---
+          - label: "Resumen Académico (Cajas de texto fijas)"
             name: "academic"
             widget: "list"
+            summary: "{{fields.es}}"
+            minimize_collapsed: true
             fields:
-              - {label: "Texto (ES)", name: "es", widget: "string"}
-              - {label: "Texto (EN)", name: "en", widget: "string"}
+              - {label: "Texto Académico (ES)", name: "es", widget: "string", hint: "Ej: Beca Magíster Nacional ANID 2026"}
+              - {label: "Texto Académico (EN)", name: "en", widget: "string", hint: "Ej: ANID National Master's Scholar 2026"}
 
+          # --- SECCIÓN: ÁREAS DE INVESTIGACIÓN ---
           - label: "Áreas de Investigación (Tags)"
             name: "tags"
             widget: "list"
+            summary: "{{fields.es}}"
+            minimize_collapsed: true
             fields:
-              - {label: "Etiqueta (ES)", name: "es", widget: "string"}
-              - {label: "Etiqueta (EN)", name: "en", widget: "string"}
+              - {label: "Nombre del Tag (ES)", name: "es", widget: "string", hint: "Ej: Relatividad General"}
+              - {label: "Nombre del Tag (EN)", name: "en", widget: "string", hint: "Ej: General Relativity"}
 
-          - label: "Botón de CV"
+          # --- SECCIÓN: TEXTO DEL BOTÓN CV ---
+          - label: "Botón de Currículum"
             name: "cv"
             widget: "object"
             fields:
-              - {label: "Texto (ES)", name: "es", widget: "string"}
-              - {label: "Texto (EN)", name: "en", widget: "string"}
+              - {label: "Texto del Botón (ES)", name: "es", widget: "string", hint: "Ej: Descargar CV Completo"}
+              - {label: "Texto del Botón (EN)", name: "en", widget: "string", hint: "Ej: Download Full CV"}
