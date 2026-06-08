@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: main # Cambiar a 'master' si tu rama principal se llama así
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "configuracion"
+    label: "Contenido del Sitio"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Textos Portafolio"
+        name: "portafolio"
+        file: "datos.json"
+        fields:
+          - label: "Líneas de Presentación (Taglines)"
+            name: "taglines"
+            widget: "list"
+            fields:
+              - {label: "Texto (ES)", name: "es", widget: "string"}
+              - {label: "Texto (EN)", name: "en", widget: "string"}
+          
+          - label: "Biografía"
+            name: "bio"
+            widget: "object"
+            fields:
+              - {label: "Biografía (ES)", name: "es", widget: "text"}
+              - {label: "Biografía (EN)", name: "en", widget: "text"}
+
+          - label: "Resumen Académico"
+            name: "academic"
+            widget: "list"
+            fields:
+              - {label: "Texto (ES)", name: "es", widget: "string"}
+              - {label: "Texto (EN)", name: "en", widget: "string"}
+
+          - label: "Áreas de Investigación (Tags)"
+            name: "tags"
+            widget: "list"
+            fields:
+              - {label: "Etiqueta (ES)", name: "es", widget: "string"}
+              - {label: "Etiqueta (EN)", name: "en", widget: "string"}
+
+          - label: "Botón de CV"
+            name: "cv"
+            widget: "object"
+            fields:
+              - {label: "Texto (ES)", name: "es", widget: "string"}
+              - {label: "Texto (EN)", name: "en", widget: "string"}
