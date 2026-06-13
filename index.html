@@ -24,14 +24,8 @@
 
         /* Animación de carga */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Contenedor Principal Split-Screen */
@@ -46,7 +40,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             position: relative;
             overflow: hidden; 
-            animation: fadeIn 0.6s ease-out forwards; /* Aplicación de la animación */
+            animation: fadeIn 0.6s ease-out forwards;
         }
 
         /* Selector de Idioma */
@@ -71,29 +65,11 @@
         input:checked + .slider:before { transform: translateX(16px); background-color: #f3f4f6; }
 
         /* Contenedor de la Imagen */
-        .profile-sidebar {
-            flex: 1;
-            display: flex;
-            background: #111214;
-        }
-
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
+        .profile-sidebar { flex: 1; display: flex; background: #111214; }
+        .profile-pic { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
         /* Sección de Contenido */
-        .content-container {
-            flex: 1.2;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
+        .content-container { flex: 1.2; padding: 50px 40px; display: flex; flex-direction: column; justify-content: center; position: relative; }
 
         /* Textos y Encabezados */
         h1 { font-size: 1.8rem; color: #f3f4f6; margin-bottom: 12px; line-height: 1.2; }
@@ -110,7 +86,7 @@
         /* Botones */
         .links-container { display: flex; flex-direction: column; gap: 12px; }
         
-        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.2s ease; color: #ffffff; border: 1px solid transparent; cursor: pointer; user-select: none; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.2s ease; color: #ffffff; border: 1px solid transparent; cursor: pointer; user-select: none; font-family: inherit; }
         .icon { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; }
         .icon svg { width: 100%; height: 100%; }
         .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
@@ -127,29 +103,10 @@
             body { padding: 15px; }
             .card { flex-direction: column; border-radius: 12px; overflow: visible; }
             
-            .language-selector { 
-                top: 15px; right: 15px; background: #1a1c1e; padding: 6px 10px; border-radius: 20px; border: 1px solid #2d3036; 
-            }
+            .language-selector { top: 15px; right: 15px; background: #1a1c1e; padding: 6px 10px; border-radius: 20px; border: 1px solid #2d3036; }
             
-            .profile-sidebar {
-                width: 100%;
-                justify-content: center;
-                background: transparent;
-                padding-top: 45px;
-                margin-bottom: -10px;
-            }
-            
-            .profile-pic {
-                flex: none;
-                width: 180px !important;
-                height: auto !important;
-                aspect-ratio: 9 / 16 !important;
-                border-radius: 16px !important;
-                border: 2px solid #2d3036;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-                object-position: center;
-                display: block;
-            }
+            .profile-sidebar { width: 100%; justify-content: center; background: transparent; padding-top: 45px; margin-bottom: -10px; }
+            .profile-pic { flex: none; width: 180px !important; height: auto !important; aspect-ratio: 9 / 16 !important; border-radius: 16px !important; border: 2px solid #2d3036; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); object-position: center; display: block; }
 
             .content-container { padding: 25px 20px 35px 20px; align-items: center; }
             h1 { font-size: 1.6rem; text-align: center; }
@@ -180,19 +137,18 @@
                 <h1>Esteban Ignacio Carrasco Barra</h1>
                 
                 <p class="tagline" id="container-tagline"></p>
-
                 <p class="bio" id="container-bio"></p>
                 
                 <div class="academic-summary" id="container-academic"></div>
-
                 <div class="research-tags" id="container-tags"></div>
             </header>
 
             <main class="links-container">
-                <div class="btn btn-email" onclick="copyEmail()">
+                <!-- Botón de Email Ofuscado -->
+                <button class="btn btn-email" onclick="copyEmail()">
                     <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg></span>
-                    <span id="email-text">esteban.carrasco@ug.uchile.cl</span>
-                </div>
+                    <span id="email-text">Cargando...</span>
+                </button>
 
                 <a href="https://www.linkedin.com/in/esteban-cb/" class="btn btn-linkedin" target="_blank" rel="noopener noreferrer">
                     <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg></span>
@@ -204,27 +160,27 @@
                     WhatsApp
                 </a>
 
-                <a href="https://www.instagram.com/estebancarrasco.exe/" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
-                    <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6Z"/></svg></span>
-                    Instagram
-                </a>
-
-                <a href="cv.pdf" class="btn btn-cv" target="_blank" id="btn-cv"></a>
+                <a href="cv.pdf" class="btn btn-cv" target="_blank" id="btn-cv">CV</a>
             </main>
         </div>
     </div>
 
     <script>
+        // --- 1. Variables de Ofuscación de Correo ---
+        const sysUser = "esteban.carrasco";
+        const sysDomain = "ug.uchile.cl";
+        const contactEmail = sysUser + "@" + sysDomain;
+
+        // --- 2. Variables del Panel ---
         const toggle = document.getElementById('lang-toggle');
         const langLabel = document.getElementById('lang-label');
         let siteData = null;
 
         function updateLanguage(isEnglish) {
             if (!siteData) return;
-            
             const lang = isEnglish ? 'en' : 'es';
             
-            // 1. Render de las Taglines
+            // Render Taglines
             const taglineCont = document.getElementById('container-tagline');
             taglineCont.innerHTML = '';
             siteData.taglines.forEach((tl, index) => {
@@ -236,10 +192,10 @@
                 }
             });
 
-            // 2. Render de Bio
+            // Render Bio
             document.getElementById('container-bio').textContent = siteData.bio[lang];
 
-            // 3. Render de Academic Summary
+            // Render Academic Summary
             const academicCont = document.getElementById('container-academic');
             academicCont.innerHTML = '';
             siteData.academic.forEach(item => {
@@ -248,7 +204,7 @@
                 academicCont.appendChild(span);
             });
 
-            // 4. Render de Research Tags
+            // Render Research Tags
             const tagsCont = document.getElementById('container-tags');
             tagsCont.innerHTML = '';
             siteData.tags.forEach(item => {
@@ -258,15 +214,19 @@
                 tagsCont.appendChild(span);
             });
 
-            // 5. Botón de CV
+            // Botón de CV
             document.getElementById('btn-cv').textContent = siteData.cv[lang];
 
-            // Selector label text
+            // Selector label
             langLabel.textContent = isEnglish ? 'ES' : 'EN';
         }
 
-        // Carga asíncrona del JSON al inicializar el documento
+        // --- 3. Inicialización ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Inyectar el correo ofuscado apenas carga el DOM
+            document.getElementById('email-text').textContent = contactEmail;
+
+            // Cargar datos dinámicos
             fetch('datos.json')
                 .then(response => {
                     if (!response.ok) throw new Error("No se pudo obtener el archivo de configuración.");
@@ -274,20 +234,23 @@
                 })
                 .then(data => {
                     siteData = data;
-                    updateLanguage(false); // Renderizado inicial en español
+                    updateLanguage(false); // Por defecto en español
                 })
                 .catch(err => console.error("Error cargando el panel dinámico:", err));
         });
 
+        // Evento toggle
         toggle.addEventListener('change', (e) => { updateLanguage(e.target.checked); });
 
+        // --- 4. Función de Copiado Dinámico ---
         function copyEmail() {
-            const email = "esteban.carrasco@ug.uchile.cl";
-            navigator.clipboard.writeText(email).then(() => {
+            navigator.clipboard.writeText(contactEmail).then(() => {
                 const emailText = document.getElementById('email-text');
                 const isEnglish = toggle.checked;
                 emailText.textContent = isEnglish ? "Copied to clipboard!" : "¡Copiado al portapapeles!";
-                setTimeout(() => { emailText.textContent = email; }, 2000);
+                
+                // Retornar al texto ofuscado
+                setTimeout(() => { emailText.textContent = contactEmail; }, 2000);
             });
         }
     </script>
