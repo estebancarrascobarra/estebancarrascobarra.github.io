@@ -46,7 +46,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
             position: relative;
             overflow: hidden; 
-            animation: fadeIn 0.6s ease-out forwards; /* Aplicación de la animación */
+            animation: fadeIn 0.6s ease-out forwards;
         }
 
         /* Selector de Idioma */
@@ -215,11 +215,9 @@
     </div>
 
     <script>
-        // --- VARIABLES DE OFUSCACIÓN DE CORREO ---
-        const sysUser = "esteban";
-        const sysUser2 = ".carrasco";
-        const sysDomain = "ug.uchile.cl";
-        const contactEmail = sysUser + sysUser2 + "@" + sysDomain;
+        // --- PROTECCIÓN CONTRA SPAM: BASE64 ---
+        // El correo está ofuscado. Decodificación en tiempo de ejecución.
+        const encodedData = "ZXN0ZWJhbi5jYXJyYXNjb0B1Zy51Y2hpbGUuY2w=";
 
         const toggle = document.getElementById('lang-toggle');
         const langLabel = document.getElementById('lang-label');
@@ -273,8 +271,8 @@
 
         // Carga asíncrona del JSON al inicializar el documento
         document.addEventListener('DOMContentLoaded', () => {
-            // Inyectar el correo apenas carga el DOM para evitar lectura de bots
-            document.getElementById('email-text').textContent = contactEmail;
+            // Decodificar el correo solo en el momento de renderizar para dificultar análisis estático
+            document.getElementById('email-text').textContent = atob(encodedData);
 
             fetch('datos.json')
                 .then(response => {
@@ -291,12 +289,17 @@
         toggle.addEventListener('change', (e) => { updateLanguage(e.target.checked); });
 
         function copyEmail() {
-            navigator.clipboard.writeText(contactEmail).then(() => {
-                const emailText = document.getElementById('email-text');
-                const isEnglish = toggle.checked;
-                emailText.textContent = isEnglish ? "Copied to clipboard!" : "¡Copiado al portapapeles!";
-                setTimeout(() => { emailText.textContent = contactEmail; }, 2000);
-            });
+            // Se decodifica nuevamente al copiar
+            const targetEmail = atob(encodedData);
+            
+            navigator.clipboard.writeText(targetEmail)
+                .then(() => {
+                    const emailText = document.getElementById('email-text');
+                    const isEnglish = toggle.checked;
+                    emailText.textContent = isEnglish ? "Copied to clipboard!" : "¡Copiado al portapapeles!";
+                    setTimeout(() => { emailText.textContent = targetEmail; }, 2000);
+                })
+                .catch(err => console.error("Fallo al acceder al portapapeles: ", err));
         }
     </script>
 
