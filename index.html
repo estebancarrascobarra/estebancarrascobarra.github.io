@@ -199,7 +199,7 @@
                     LinkedIn
                 </a>
 
-                <a href="https://wa.me/56952595714" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                <a href="#" id="wa-link" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
                     <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.4-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.31a8.182 8.182 0 0 1-1.25-4.38c.01-4.54 3.7-8.23 8.24-8.23m-3.53 4.8c-.13 0-.28.05-.43.21c-.15.16-.58.57-.58 1.39c0 .82.6 1.62.68 1.73c.09.11 1.18 1.81 2.86 2.53c.4.17.71.27.95.35c.4.13.77.11 1.06.07c.32-.05 1-.41 1.14-.81c.14-.39.14-.73.1-.81c-.04-.08-.14-.13-.3-.21c-.16-.08-.94-.47-1.08-.52c-.14-.05-.25-.08-.35.08c-.1.16-.39.49-.48.6c-.09.11-.18.12-.34.04c-.16-.08-.68-.25-1.31-.81c-.49-.43-.81-.97-.91-1.14c-.1-.17-.01-.26.07-.34c.08-.08.16-.18.24-.28c.08-.1.11-.16.16-.27c.05-.11.02-.2-.01-.29c-.03-.09-.35-.85-.48-1.16c-.13-.32-.27-.28-.35-.28c-.08 0-.18-.01-.29-.01Z"/></svg></span>
                     WhatsApp
                 </a>
@@ -216,8 +216,9 @@
 
     <script>
         // --- PROTECCIÓN CONTRA SPAM: BASE64 ---
-        // El correo está ofuscado. Decodificación en tiempo de ejecución.
+        // Correo y número telefónico ofuscados. Decodificación en tiempo de ejecución.
         const encodedData = "ZXN0ZWJhbi5jYXJyYXNjb0B1Zy51Y2hpbGUuY2w=";
+        const encodedPhone = "NTY5NTI1OTU3MTQ=";
 
         const toggle = document.getElementById('lang-toggle');
         const langLabel = document.getElementById('lang-label');
@@ -271,8 +272,9 @@
 
         // Carga asíncrona del JSON al inicializar el documento
         document.addEventListener('DOMContentLoaded', () => {
-            // Decodificar el correo solo en el momento de renderizar para dificultar análisis estático
+            // Decodificar el correo y el enlace de WhatsApp al renderizar
             document.getElementById('email-text').textContent = atob(encodedData);
+            document.getElementById('wa-link').href = "https://wa.me/" + atob(encodedPhone);
 
             fetch('datos.json')
                 .then(response => {
