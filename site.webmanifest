@@ -1,0 +1,16 @@
+{
+  "name": "Esteban Ignacio Carrasco Barra",
+  "short_name": "Carrasco Barra",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080b12",
+  "theme_color": "#080b12",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
