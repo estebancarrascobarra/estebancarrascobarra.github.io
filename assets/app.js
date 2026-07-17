@@ -36,7 +36,7 @@ const translations = {
     "research.note": "Intereses actuales y experiencia que orientan mi trabajo de investigación.",
     "research.item1Title": "Cosmología e inflación",
     "research.item1Text": "Dinámica del universo temprano, perturbaciones cosmológicas y generación de estructura primordial.",
-    "research.item2Title": "Relatividad general",
+    "research.item2Title": "Relatividad General",
     "research.item2Text": "Geometría del espacio-tiempo, gravitación y termodinámica de agujeros negros.",
     "research.item3Title": "Teoría cuántica de campos",
     "research.item3Text": "Estructuras formales y métodos cuánticos aplicados a sistemas de altas energías.",
