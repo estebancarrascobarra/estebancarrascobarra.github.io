@@ -58,7 +58,7 @@ const translations = {
     "background.item3Detail": "Primer lugar de la promoción · Tesis financiada por FONDEF",
     "cta.eyebrow": "Contacto académico",
     "cta.title": "Conversemos sobre investigación, colaboración o proyectos.",
-    "footer.tagline": "Física teórica · Matemáticas Aplicadas",
+    "footer.tagline": "Física Teórica · Matemáticas Aplicadas",
     "contact.eyebrow": "Mensaje privado",
     "contact.title": "Contacto",
     "contact.intro": "Mensaje directo",
