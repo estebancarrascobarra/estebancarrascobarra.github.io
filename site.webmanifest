@@ -1,16 +1,13 @@
 {
   "name": "Esteban Ignacio Carrasco Barra",
   "short_name": "Carrasco Barra",
+  "description": "Sitio académico sobre gravitación, cosmología, física matemática y modelación científica.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#080b12",
   "theme_color": "#080b12",
   "icons": [
-    {
-      "src": "favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    {"src": "favicon-32x32.png", "sizes": "32x32", "type": "image/png"},
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
   ]
 }
