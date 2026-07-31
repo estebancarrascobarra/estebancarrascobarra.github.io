@@ -1,9 +1,13 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-language="es"
+  data-title-es="Esteban Ignacio Carrasco Barra | Gravitación y cosmología"
+  data-title-en="Esteban Ignacio Carrasco Barra | Gravitation and cosmology"
+  data-description-es="Sitio académico de Esteban Ignacio Carrasco Barra, estudiante de Magíster en Física interesado en gravitación, cosmología y física matemática."
+  data-description-en="Academic website of Esteban Ignacio Carrasco Barra, an M.Sc. Physics student interested in gravitation, cosmology and mathematical physics.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sitio académico de Esteban Ignacio Carrasco Barra: cosmología teórica, inflación, modelación matemática, computación científica y proyectos de I+D.">
+  <meta name="description" content="Sitio académico de Esteban Ignacio Carrasco Barra, estudiante de Magíster en Física interesado en gravitación, cosmología y física matemática.">
   <meta name="author" content="Esteban Ignacio Carrasco Barra">
   <meta name="theme-color" content="#080b12">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -11,21 +15,28 @@
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
-  <meta property="og:title" content="Esteban Ignacio Carrasco Barra | Física teórica y Matemáticas Aplicadas">
-  <meta property="og:description" content="Cosmología, inflación, relatividad general, teoría cuántica de campos, modelación matemática y computación científica.">
+  <meta property="og:title" content="Esteban Ignacio Carrasco Barra | Gravitación y cosmología">
+  <meta property="og:description" content="Física teórica con interés en gravitación, cosmología y problemas de orientación matemática.">
   <meta property="og:url" content="https://carrascobarra.com/">
   <meta property="og:image" content="https://carrascobarra.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <title>Esteban Ignacio Carrasco Barra | Física teórica</title>
+  <title>Esteban Ignacio Carrasco Barra | Gravitación y cosmología</title>
   <link rel="canonical" href="https://carrascobarra.com/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <a class="skip-link" href="#main-content">
+    <span data-lang="es">Saltar al contenido</span>
+    <span data-lang="en">Skip to content</span>
+  </a>
 
   <div class="background" aria-hidden="true">
     <div class="background__grid"></div>
@@ -35,24 +46,26 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Inicio">
-      <span class="brand__mark" aria-hidden="true">EC</span>
+      <span class="brand__mark" aria-hidden="true"><img src="favicon-32x32.png" alt=""></span>
       <span class="brand__text">Carrasco Barra</span>
     </a>
 
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="#perfil" data-i18n="nav.profile">Perfil</a>
-      <a href="#investigacion" data-i18n="nav.research">Investigación</a>
-      <a href="#trayectoria" data-i18n="nav.background">Trayectoria</a>
+      <a href="#perfil"><span data-lang="es">Perfil</span><span data-lang="en">Profile</span></a>
+      <a href="#investigacion"><span data-lang="es">Investigación</span><span data-lang="en">Research</span></a>
+      <a href="#trayectoria"><span data-lang="es">Trayectoria</span><span data-lang="en">Background</span></a>
     </nav>
 
     <div class="header-actions">
-      <button class="language-toggle" id="language-toggle" type="button" aria-label="Cambiar idioma" aria-pressed="false">
+      <button class="language-toggle" id="language-toggle" type="button"
+        aria-label="Switch to English" aria-pressed="false"
+        data-label-es="Switch to English" data-label-en="Cambiar a español">
         <span class="language-toggle__active" id="language-current">ES</span>
         <span aria-hidden="true">/</span>
         <span id="language-alternate">EN</span>
       </button>
       <button class="button button--compact button--primary" type="button" data-open-contact>
-        <span data-i18n="actions.contact">Contacto</span>
+        <span data-lang="es">Contacto</span><span data-lang="en">Contact</span>
       </button>
     </div>
   </header>
@@ -60,31 +73,41 @@
   <main id="main-content">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero__content">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Física teórica · Matemáticas Aplicadas</p>
+        <p class="eyebrow">
+          <span data-lang="es">Gravitación · Cosmología · Física matemática</span>
+          <span data-lang="en">Gravitation · Cosmology · Mathematical physics</span>
+        </p>
         <h1 id="hero-title">Esteban Ignacio<br>Carrasco Barra</h1>
-        <p class="hero__lead" data-i18n="hero.lead">
-          Ingeniero Civil Matemático y estudiante de Magíster en Física en la Universidad de Chile. Trabajo en la intersección entre cosmología teórica, modelación matemática y computación científica.
+        <p class="hero__lead" data-lang="es">
+          Ingeniero Civil Matemático y estudiante del Magíster en Ciencias, mención Física, en la Universidad de Chile. Mis intereses se concentran en gravitación y cosmología, especialmente en problemas de orientación matemática y teórica, junto con una trayectoria previa en modelación y computación científica.
+        </p>
+        <p class="hero__lead" data-lang="en">
+          Mathematical Engineer and M.Sc. student in Physics at Universidad de Chile. My interests centre on gravitation and cosmology, particularly mathematically and theoretically oriented problems, alongside prior experience in scientific modelling and computation.
         </p>
 
         <div class="hero__actions">
           <button class="button button--primary" type="button" data-open-contact>
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5h16v13H4zM4.5 6l7.5 6 7.5-6"/></svg>
-            <span data-i18n="actions.write">Escríbeme</span>
+            <span data-lang="es">Escríbeme</span><span data-lang="en">Contact me</span>
           </button>
           <a class="button button--secondary" href="cv.pdf" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v5h5M10 13h5M10 17h5"/></svg>
-            <span data-i18n="actions.cv">Ver currículum</span>
+            <span data-lang="es">Ver currículum</span><span data-lang="en">View CV</span>
           </a>
         </div>
 
         <div class="hero__meta" aria-label="Información académica resumida">
           <div>
-            <span class="hero__meta-label" data-i18n="hero.currentLabel">Actualmente</span>
-            <strong data-i18n="hero.currentValue">Magíster en Física · UChile</strong>
+            <span class="hero__meta-label"><span data-lang="es">Programa</span><span data-lang="en">Programme</span></span>
+            <strong><span data-lang="es">Magíster en Física · UChile</span><span data-lang="en">M.Sc. in Physics · UChile</span></strong>
           </div>
           <div>
-            <span class="hero__meta-label" data-i18n="hero.supportLabel">Financiamiento</span>
-            <strong data-i18n="hero.supportValue">Beca de Magíster Nacional ANID</strong>
+            <span class="hero__meta-label"><span data-lang="es">Intereses</span><span data-lang="en">Interests</span></span>
+            <strong><span data-lang="es">Gravitación y cosmología</span><span data-lang="en">Gravitation and cosmology</span></strong>
+          </div>
+          <div>
+            <span class="hero__meta-label"><span data-lang="es">Financiamiento</span><span data-lang="en">Funding</span></span>
+            <strong><span data-lang="es">Beca de Magíster ANID</span><span data-lang="en">ANID Master's Scholarship</span></strong>
           </div>
         </div>
       </div>
@@ -98,39 +121,63 @@
         </div>
         <div class="portrait-panel__status">
           <span class="status-dot" aria-hidden="true"></span>
-          <span data-i18n="hero.status">Temuco · Santiago · Disponible para colaboración académica</span>
+          <span data-lang="es">Temuco · Santiago · Abierto a colaboración académica</span>
+          <span data-lang="en">Temuco · Santiago · Open to academic collaboration</span>
+        </div>
+        <div class="portrait-panel__focus" aria-hidden="true">
+          <span data-lang="es">Perspectiva</span><span data-lang="en">Approach</span>
+          <strong data-lang="es">Matemática y teórica</strong><strong data-lang="en">Mathematical and theoretical</strong>
         </div>
       </div>
     </section>
 
     <section class="section" id="perfil" aria-labelledby="profile-title">
       <div class="section-heading">
-        <p class="eyebrow" data-i18n="profile.eyebrow">Perfil</p>
-        <h2 id="profile-title" data-i18n="profile.title">Una trayectoria entre matemática, física y modelación</h2>
+        <p class="eyebrow"><span data-lang="es">Perfil académico</span><span data-lang="en">Academic profile</span></p>
+        <h2 id="profile-title">
+          <span data-lang="es">Matemática, física y modelación como una trayectoria común</span>
+          <span data-lang="en">Mathematics, physics and modelling as a unified path</span>
+        </h2>
       </div>
 
       <div class="profile-grid">
         <article class="panel panel--statement">
-          <p data-i18n="profile.paragraph1">
-            Mi trabajo se sitúa en la interfaz entre la formulación matemática rigurosa y la interpretación física. Actualmente desarrollo mi formación de postgrado en física teórica, con énfasis en teoría inflacionaria y perturbaciones primordiales.
+          <p data-lang="es">
+            Mi formación combina matemáticas aplicadas, física y modelación científico-computacional. En el postgrado busco orientar mi investigación hacia gravitación y cosmología, priorizando formulaciones geométricas, métodos analíticos y preguntas conceptuales donde la estructura matemática desempeñe un papel central.
           </p>
-          <p data-i18n="profile.paragraph2">
-            Mi experiencia abarca modelación de incendios forestales mediante ecuaciones diferenciales parciales, simulación numérica y computación de alto rendimiento, además de dirección de proyectos de I+D e inteligencia artificial aplicada a educación.
+          <p data-lang="en">
+            My background combines applied mathematics, physics and scientific-computational modelling. During graduate study, I seek to orient my research toward gravitation and cosmology, prioritising geometric formulations, analytical methods and conceptual questions in which mathematical structure plays a central role.
           </p>
+          <p data-lang="es">
+            Mi experiencia previa incluye ecuaciones diferenciales parciales, simulación numérica, computación de alto rendimiento y dinámica fuego-atmósfera, además de dirección de proyectos de I+D e inteligencia artificial aplicada a educación.
+          </p>
+          <p data-lang="en">
+            My previous experience includes partial differential equations, numerical simulation, high-performance computing and fire-atmosphere dynamics, as well as R&D project leadership and artificial intelligence applied to education.
+          </p>
+
+          <div class="profile-direction">
+            <span class="profile-direction__label"><span data-lang="es">Dirección actual</span><span data-lang="en">Current direction</span></span>
+            <p data-lang="es">Exploro posibles líneas de tesis dentro de gravitación y cosmología, sin restringirme todavía a un problema específico.</p>
+            <p data-lang="en">I am exploring possible thesis directions within gravitation and cosmology, without yet restricting myself to a single specific problem.</p>
+          </div>
         </article>
 
         <aside class="panel panel--facts" aria-label="Datos destacados">
           <div class="fact">
             <strong>6,6/7</strong>
-            <span data-i18n="profile.fact1">Nota final de pregrado</span>
+            <span data-lang="es">Nota final de pregrado</span><span data-lang="en">Final undergraduate grade</span>
           </div>
           <div class="fact">
             <strong>1/8</strong>
-            <span data-i18n="profile.fact2">Primer lugar de la promoción</span>
+            <span data-lang="es">Primer lugar de la promoción</span><span data-lang="en">Top-ranked graduate</span>
+          </div>
+          <div class="fact">
+            <strong>ANID</strong>
+            <span data-lang="es">Beca de Magíster Nacional 2026</span><span data-lang="en">2026 National Master's Scholarship</span>
           </div>
           <div class="fact">
             <strong>CTFC</strong>
-            <span data-i18n="profile.fact3">Experiencia internacional en investigación</span>
+            <span data-lang="es">Experiencia internacional en investigación</span><span data-lang="en">International research experience</span>
           </div>
         </aside>
       </div>
@@ -139,100 +186,104 @@
     <section class="section" id="investigacion" aria-labelledby="research-title">
       <div class="section-heading section-heading--split">
         <div>
-          <p class="eyebrow" data-i18n="research.eyebrow">Áreas de interés</p>
-          <h2 id="research-title" data-i18n="research.title">Preguntas fundamentales, herramientas precisas</h2>
+          <p class="eyebrow"><span data-lang="es">Intereses de investigación</span><span data-lang="en">Research interests</span></p>
+          <h2 id="research-title">
+            <span data-lang="es">Problemas fundamentales desde una perspectiva matemática</span>
+            <span data-lang="en">Fundamental problems from a mathematical perspective</span>
+          </h2>
         </div>
-        <p class="section-heading__note" data-i18n="research.note">
-          Intereses actuales y experiencia que orientan mi trabajo de investigación.
-        </p>
+        <p class="section-heading__note" data-lang="es">Áreas amplias que orientan mi búsqueda de una línea de tesis y mis intereses de largo plazo.</p>
+        <p class="section-heading__note" data-lang="en">Broad areas guiding my search for a thesis direction and my longer-term interests.</p>
       </div>
 
       <div class="research-grid">
         <article class="research-card research-card--featured">
           <span class="research-card__number">01</span>
-          <h3 data-i18n="research.item1Title">Cosmología e inflación</h3>
-          <p data-i18n="research.item1Text">Dinámica del universo temprano, perturbaciones cosmológicas y generación de estructura primordial.</p>
+          <h3><span data-lang="es">Gravitación y relatividad general</span><span data-lang="en">Gravitation and general relativity</span></h3>
+          <p data-lang="es">Estructura geométrica de las teorías gravitacionales, soluciones relativistas, agujeros negros y aspectos conceptuales de la gravedad.</p>
+          <p data-lang="en">Geometric structure of gravitational theories, relativistic solutions, black holes and conceptual aspects of gravity.</p>
         </article>
         <article class="research-card">
           <span class="research-card__number">02</span>
-          <h3 data-i18n="research.item2Title">Relatividad general</h3>
-          <p data-i18n="research.item2Text">Geometría del espacio-tiempo, gravitación y termodinámica de agujeros negros.</p>
+          <h3><span data-lang="es">Cosmología teórica</span><span data-lang="en">Theoretical cosmology</span></h3>
+          <p data-lang="es">Dinámica del universo temprano, perturbaciones cosmológicas, generación de estructura y fundamentos de los modelos cosmológicos.</p>
+          <p data-lang="en">Early-universe dynamics, cosmological perturbations, structure formation and foundations of cosmological models.</p>
         </article>
         <article class="research-card">
           <span class="research-card__number">03</span>
-          <h3 data-i18n="research.item3Title">Teoría cuántica de campos</h3>
-          <p data-i18n="research.item3Text">Estructuras formales y métodos cuánticos aplicados a sistemas de altas energías.</p>
+          <h3><span data-lang="es">Física matemática y teoría de campos</span><span data-lang="en">Mathematical physics and field theory</span></h3>
+          <p data-lang="es">Métodos geométricos y analíticos, estructuras de teoría de campos y herramientas formales aplicadas a gravitación y altas energías.</p>
+          <p data-lang="en">Geometric and analytical methods, field-theory structures and formal tools applied to gravitation and high-energy physics.</p>
         </article>
         <article class="research-card">
           <span class="research-card__number">04</span>
-          <h3 data-i18n="research.item4Title">Modelación matemática y EDP</h3>
-          <p data-i18n="research.item4Text">Modelos de reacción-difusión-convección, métodos numéricos y dinámica fuego-atmósfera en problemas de incendios forestales.</p>
+          <h3><span data-lang="es">Modelación matemática y computación científica</span><span data-lang="en">Mathematical modelling and scientific computing</span></h3>
+          <p data-lang="es">EDP de reacción-difusión-convección, métodos numéricos, simulación y dinámica fuego-atmósfera en problemas complejos.</p>
+          <p data-lang="en">Reaction-diffusion-convection PDEs, numerical methods, simulation and fire-atmosphere dynamics in complex problems.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="trayectoria" aria-labelledby="background-title">
       <div class="section-heading">
-        <p class="eyebrow" data-i18n="background.eyebrow">Trayectoria</p>
-        <h2 id="background-title" data-i18n="background.title">Formación y experiencia</h2>
+        <p class="eyebrow"><span data-lang="es">Trayectoria</span><span data-lang="en">Background</span></p>
+        <h2 id="background-title"><span data-lang="es">Formación y experiencia seleccionada</span><span data-lang="en">Selected education and experience</span></h2>
       </div>
 
       <div class="timeline">
         <article class="timeline-item">
-          <div class="timeline-item__date">2026 — Actualidad</div>
+          <div class="timeline-item__date">2026 — <span data-lang="es">Actualidad</span><span data-lang="en">Present</span></div>
           <div class="timeline-item__content">
-            <h3 data-i18n="background.item0Title">Investigador responsable de proyecto de I+D</h3>
-            <p data-i18n="background.item0Place">Innovación UFRO · Temuco, Chile</p>
-            <span data-i18n="background.item0Detail">Dirección científica y gestión de Docta, tutor de IA con metodología socrática, financiado por ANID InES I+D</span>
+            <h3><span data-lang="es">Magíster en Ciencias, mención Física</span><span data-lang="en">M.Sc. in Science, major in Physics</span></h3>
+            <p><span data-lang="es">Universidad de Chile · Facultad de Ciencias Físicas y Matemáticas</span><span data-lang="en">Universidad de Chile · Faculty of Physical and Mathematical Sciences</span></p>
+            <span data-lang="es">Becario ANID · Intereses en gravitación, cosmología y física matemática</span>
+            <span data-lang="en">ANID scholar · Interests in gravitation, cosmology and mathematical physics</span>
           </div>
         </article>
         <article class="timeline-item">
-          <div class="timeline-item__date">2026 — Actualidad</div>
+          <div class="timeline-item__date">2026 — <span data-lang="es">Actualidad</span><span data-lang="en">Present</span></div>
           <div class="timeline-item__content">
-            <h3 data-i18n="background.item1Title">Magíster en Ciencias, mención Física</h3>
-            <p data-i18n="background.item1Place">Universidad de Chile · Facultad de Ciencias Físicas y Matemáticas</p>
-            <span data-i18n="background.item1Detail">Becario ANID · Orientación en cosmología teórica e inflación</span>
+            <h3><span data-lang="es">Investigador responsable de proyecto de I+D</span><span data-lang="en">Lead researcher for an R&D project</span></h3>
+            <p><span data-lang="es">Innovación UFRO · Temuco, Chile</span><span data-lang="en">UFRO Innovation · Temuco, Chile</span></p>
+            <span data-lang="es">Dirección científica y gestión de Docta, tutor de IA con metodología socrática, financiado por ANID InES I+D</span>
+            <span data-lang="en">Scientific leadership and management of Docta, an AI tutor based on the Socratic method, funded by ANID InES I+D</span>
           </div>
         </article>
         <article class="timeline-item">
           <div class="timeline-item__date">2025 — 2026</div>
           <div class="timeline-item__content">
-            <h3 data-i18n="background.item2Title">Investigador visitante</h3>
-            <p data-i18n="background.item2Place">Centre de Ciència i Tecnologia Forestal de Catalunya · España</p>
-            <span data-i18n="background.item2Detail">Marie Curie Staff Exchange · Modelación en Física Atmosférica</span>
+            <h3><span data-lang="es">Investigador visitante</span><span data-lang="en">Visiting researcher</span></h3>
+            <p><span data-lang="es">Centre de Ciència i Tecnologia Forestal de Catalunya · España</span><span data-lang="en">Forest Science and Technology Centre of Catalonia · Spain</span></p>
+            <span data-lang="es">Marie Skłodowska-Curie Staff Exchange · Modelación físico-matemática de eventos extremos y dinámica fuego-atmósfera</span>
+            <span data-lang="en">Marie Skłodowska-Curie Staff Exchange · Physical-mathematical modelling of extreme events and fire-atmosphere dynamics</span>
           </div>
         </article>
         <article class="timeline-item">
-          <div class="timeline-item__date">2025</div>
+          <div class="timeline-item__date">2019 — 2025</div>
           <div class="timeline-item__content">
-            <h3 data-i18n="background.item3Title">Ingeniero Civil Matemático</h3>
-            <p data-i18n="background.item3Place">Universidad de La Frontera</p>
-            <span data-i18n="background.item3Detail">Primer lugar de la promoción · Tesis en Ecuaciones en Derivadas Parciales financiada por FONDEF</span>
+            <h3><span data-lang="es">Ingeniería Civil Matemática</span><span data-lang="en">Mathematical Engineering</span></h3>
+            <p><span data-lang="es">Universidad de La Frontera</span><span data-lang="en">Universidad de La Frontera</span></p>
+            <span data-lang="es">Primer lugar de la promoción · Tesis en EDP y propagación de incendios forestales financiada por FONDEF</span>
+            <span data-lang="en">Top-ranked graduate · FONDEF-funded thesis on PDEs and wildfire propagation</span>
           </div>
         </article>
       </div>
 
       <div class="skills" aria-label="Herramientas técnicas">
-        <span>Python</span>
-        <span>Mathematica</span>
-        <span>Julia</span>
-        <span>MATLAB</span>
-        <span>C++</span>
-        <span>LaTeX</span>
-        <span>HPC</span>
-        <span>PDEs</span>
-        <span>Machine Learning</span>
-        <span>I+D</span>
+        <span>Python</span><span>Mathematica</span><span>Julia</span><span>MATLAB</span><span>C++</span><span>LaTeX</span><span>HPC</span><span>PDEs</span><span>Machine Learning</span><span>I+D</span>
       </div>
     </section>
 
     <section class="contact-cta" aria-labelledby="contact-cta-title">
       <div>
-        <p class="eyebrow" data-i18n="cta.eyebrow">Contacto académico</p>
-        <h2 id="contact-cta-title" data-i18n="cta.title">Conversemos sobre investigación, colaboración o proyectos.</h2>
+        <p class="eyebrow"><span data-lang="es">Contacto académico</span><span data-lang="en">Academic contact</span></p>
+        <h2 id="contact-cta-title">
+          <span data-lang="es">Conversemos sobre investigación, colaboración o proyectos.</span>
+          <span data-lang="en">Let us discuss research, collaboration or projects.</span>
+        </h2>
       </div>
       <button class="button button--light" type="button" data-open-contact>
-        <span data-i18n="actions.openForm">Abrir formulario seguro</span>
+        <span data-lang="es">Abrir formulario seguro</span><span data-lang="en">Open secure form</span>
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></svg>
       </button>
     </section>
@@ -241,7 +292,7 @@
   <footer class="site-footer">
     <div>
       <strong>Esteban Ignacio Carrasco Barra</strong>
-      <span data-i18n="footer.tagline">Física teórica · Matemáticas Aplicadas</span>
+      <span><span data-lang="es">Gravitación · Cosmología · Física matemática</span><span data-lang="en">Gravitation · Cosmology · Mathematical physics</span></span>
     </div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/esteban-cb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -254,19 +305,26 @@
   <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
     <div class="contact-dialog__header">
       <div>
-        <p class="eyebrow" data-i18n="contact.eyebrow">Mensaje privado</p>
-        <h2 id="contact-title" data-i18n="contact.title">Contacto</h2>
+        <p class="eyebrow"><span data-lang="es">Mensaje privado</span><span data-lang="en">Private message</span></p>
+        <h2 id="contact-title"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></h2>
       </div>
-      <button class="icon-button" id="close-contact" type="button" aria-label="Cerrar formulario">
+      <button class="icon-button" id="close-contact" type="button" aria-label="Cerrar formulario"
+        data-label-es="Cerrar formulario" data-label-en="Close form">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
 
-    <p class="contact-dialog__intro" data-i18n="contact.intro">
-      
-    </p>
+    <p class="contact-dialog__intro" data-lang="es">Este formulario permite contactarme sin publicar mi dirección de correo en el sitio.</p>
+    <p class="contact-dialog__intro" data-lang="en">This form allows you to contact me without publishing my email address on the website.</p>
 
-    <form id="contact-form" method="POST" novalidate>
+    <!-- Sustituye REEMPLAZA_CON_TU_ID por el identificador de tu formulario Formspree. -->
+    <form id="contact-form" action="https://formspree.io/f/REEMPLAZA_CON_TU_ID" method="POST" novalidate
+      data-turnstile-sitekey="REEMPLAZA_CON_TU_SITE_KEY"
+      data-sending-es="Enviando…" data-sending-en="Sending…"
+      data-success-es="Mensaje enviado correctamente." data-success-en="Message sent successfully."
+      data-error-es="No fue posible enviar el mensaje. Intenta nuevamente." data-error-en="The message could not be sent. Please try again."
+      data-invalid-es="Revisa los campos obligatorios." data-invalid-en="Check the required fields."
+      data-notconfigured-es="Configura el identificador de Formspree en index.html." data-notconfigured-en="Configure the Formspree ID in index.html.">
       <div class="honeypot" aria-hidden="true">
         <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
       </div>
@@ -276,22 +334,22 @@
 
       <div class="form-row">
         <label class="form-field">
-          <span data-i18n="contact.name">Nombre</span>
+          <span data-lang="es">Nombre</span><span data-lang="en">Name</span>
           <input type="text" name="name" autocomplete="name" required maxlength="100">
         </label>
         <label class="form-field">
-          <span data-i18n="contact.email">Correo para responder</span>
+          <span data-lang="es">Correo para responder</span><span data-lang="en">Reply email</span>
           <input type="email" name="email" autocomplete="email" required maxlength="160">
         </label>
       </div>
 
       <label class="form-field">
-        <span data-i18n="contact.subject">Asunto</span>
+        <span data-lang="es">Asunto</span><span data-lang="en">Subject</span>
         <input type="text" name="subject" required maxlength="140">
       </label>
 
       <label class="form-field">
-        <span data-i18n="contact.message">Mensaje</span>
+        <span data-lang="es">Mensaje</span><span data-lang="en">Message</span>
         <textarea name="message" rows="6" required minlength="20" maxlength="3000"></textarea>
       </label>
 
@@ -300,7 +358,7 @@
       <div class="form-footer">
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         <button class="button button--primary" id="submit-contact" type="submit">
-          <span data-i18n="contact.send">Enviar mensaje</span>
+          <span data-lang="es">Enviar mensaje</span><span data-lang="en">Send message</span>
         </button>
       </div>
     </form>
