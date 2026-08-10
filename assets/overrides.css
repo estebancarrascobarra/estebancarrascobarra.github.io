@@ -1,0 +1,48 @@
+/* v5 refinements: keep the portrait callout inside the visual column at every desktop width. */
+.hero { overflow: visible; }
+
+.portrait-panel__focus {
+  right: 14px;
+  width: max-content;
+  max-width: calc(100% - 28px);
+  background: rgba(11, 16, 25, 0.94);
+}
+
+.portrait-panel__focus strong {
+  line-height: 1.35;
+}
+
+.research-card {
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(143, 183, 255, 0.28);
+  background: linear-gradient(145deg, rgba(20, 28, 44, 0.96), rgba(12, 16, 25, 0.86));
+}
+
+@media (max-width: 1100px) {
+  .portrait-panel__focus { right: 10px; }
+}
+
+@media (max-width: 900px) {
+  .hero { overflow: clip; }
+  .portrait-panel__focus { top: 48px; right: 12px; }
+}
+
+@media (max-width: 620px) {
+  .portrait-panel__focus {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: calc(100% - 56px);
+    max-width: none;
+    margin: 12px auto 0;
+    text-align: center;
+  }
+}
+
+@media (hover: none) {
+  .research-card:hover { transform: none; }
+}
