@@ -35,17 +35,17 @@ function capitalize(value) {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-function setBilingual(selector, es, en) {
-  const container = document.querySelector(selector);
+function setBilingual(containerSelector, es, en, childSelector = "") {
+  const container = document.querySelector(containerSelector);
   if (!container) return;
-  const esNode = container.querySelector('[data-lang="es"]');
-  const enNode = container.querySelector('[data-lang="en"]');
+  const base = childSelector ? `${childSelector}` : "";
+  const esNode = container.querySelector(`${base}[data-lang="es"]`);
+  const enNode = container.querySelector(`${base}[data-lang="en"]`);
   if (esNode) esNode.textContent = es;
   if (enNode) enNode.textContent = en;
 }
 
 function refineAcademicContent() {
-  // Keep the published profile deliberately broad while the thesis line remains open.
   root.dataset.titleEs = "Esteban Ignacio Carrasco Barra | Gravitación y cosmología teórica";
   root.dataset.titleEn = "Esteban Ignacio Carrasco Barra | Theoretical gravitation and cosmology";
   root.dataset.descriptionEs = "Sitio académico de Esteban Ignacio Carrasco Barra, estudiante de Magíster en Física con intereses en gravitación, relatividad general, cosmología teórica, agujeros negros y física matemática, con preferencia por enfoques analíticos y matemáticos.";
@@ -83,7 +83,8 @@ function refineAcademicContent() {
   setBilingual(
     ".profile-direction",
     "Intereses abiertos dentro de gravitación y cosmología, con particular atención a relatividad general, agujeros negros, universo temprano y teoría de campos. La línea específica de tesis aún no está fijada.",
-    "Open interests within gravitation and cosmology, with particular attention to general relativity, black holes, the early universe and field theory. The specific thesis direction is not yet fixed."
+    "Open interests within gravitation and cosmology, with particular attention to general relativity, black holes, the early universe and field theory. The specific thesis direction is not yet fixed.",
+    "p"
   );
 
   setBilingual(
@@ -92,8 +93,7 @@ function refineAcademicContent() {
     "Gravitation and cosmology with a mathematical and theoretical emphasis"
   );
 
-  const notes = document.querySelectorAll(".section-heading__note");
-  notes.forEach((note) => {
+  document.querySelectorAll(".section-heading__note").forEach((note) => {
     if (note.dataset.lang === "es") {
       note.textContent = "Intereses amplios que orientan mi formación actual; no representan todavía una línea de tesis cerrada.";
     } else if (note.dataset.lang === "en") {
@@ -101,7 +101,6 @@ function refineAcademicContent() {
     }
   });
 
-  const cards = document.querySelectorAll(".research-card");
   const cardContent = [
     {
       esTitle: "Gravitación y relatividad general",
@@ -129,17 +128,22 @@ function refineAcademicContent() {
     }
   ];
 
-  cards.forEach((card, index) => {
+  document.querySelectorAll(".research-card").forEach((card, index) => {
     const content = cardContent[index];
     if (!content) return;
-    setBilingual(`.research-card:nth-child(${index + 1}) h3`, content.esTitle, content.enTitle);
-    setBilingual(`.research-card:nth-child(${index + 1})`, content.esText, content.enText);
+    const esTitle = card.querySelector('h3 [data-lang="es"]');
+    const enTitle = card.querySelector('h3 [data-lang="en"]');
+    const esText = card.querySelector('p[data-lang="es"]');
+    const enText = card.querySelector('p[data-lang="en"]');
+    if (esTitle) esTitle.textContent = content.esTitle;
+    if (enTitle) enTitle.textContent = content.enTitle;
+    if (esText) esText.textContent = content.esText;
+    if (enText) enText.textContent = content.enText;
   });
 
   const mastersEntry = document.querySelector(".timeline-item:first-child .timeline-item__content");
   if (mastersEntry) {
-    const spans = mastersEntry.querySelectorAll(":scope > span[data-lang]");
-    spans.forEach((span) => {
+    mastersEntry.querySelectorAll(":scope > span[data-lang]").forEach((span) => {
       if (span.dataset.lang === "es") span.textContent = "Becario ANID · Intereses en gravitación, relatividad general, cosmología y física matemática";
       if (span.dataset.lang === "en") span.textContent = "ANID scholar · Interests in gravitation, general relativity, cosmology and mathematical physics";
     });
